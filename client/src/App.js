@@ -1,5 +1,5 @@
 import {useState,useEffect} from 'react';
-const API_BASE = "http://localhost:3001";
+const API_BASE = "https://todo-application-gp.herokuapp.com";
 const axios = require('axios');
 function App() {
 	const [todos,setTodos] = useState([]);
