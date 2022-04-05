@@ -1,12 +1,15 @@
+if(process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const { urlencoded } = require("express");
-const Task = require("./models/task");
 const taskRoutes = require("./routes/task");
 //DB connection
+const cloudDb = process.env.CLOUD_DB_URL;
 const localDb = 'mongodb://localhost:27017/todo-mern';
-mongoose.connect(localDb, {
+mongoose.connect(cloudDb, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
